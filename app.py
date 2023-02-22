@@ -1,8 +1,9 @@
-from flask import Flask, render_template, redirect
 import os
+import socket
 import secrets
 import sqlite3
-import socket
+from flask import Flask, render_template, redirect
+
 
 app = Flask(__name__)
 app.secret_key = secrets.token_urlsafe(32)
