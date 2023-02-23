@@ -13,6 +13,33 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
   <body>
-    <h1>flaskNotes</h1>
+    <div class="container">
+      <div class="notes">
+        {% for note in notes %}
+
+        <div class="note">
+          <p id="noteID">{{note[0]}}</p>
+          <input type="text" value="{{note[1]}}" id="noteTitle" />
+          <textarea name="" cols="30" rows="10" id="noteContent">
+{{note[2]}}</textarea
+          >
+          <button onclick="editNote()">💾</button>
+          <a href="/delete/{{note[0]}}">🗑️</a>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="new">
+        <input type="text" name="title" id="title" placeholder="title" />
+        <textarea
+          name="content"
+          id="content"
+          cols="30"
+          rows="10"
+          placeholder="content"
+        ></textarea>
+        <button class="addNote" onclick="addNote()">add</button>
+      </div>
+    </div>
   </body>
+  <script src="/static/js/script.js"></script>
 </html>
