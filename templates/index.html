@@ -16,15 +16,15 @@
     <div class="container">
       <div class="notes">
         {% for note in notes %}
-
-        <div class="note">
-          <p id="noteID">{{note[0]}}</p>
+        <div class="note" id="{{note[0]}}">
           <input type="text" value="{{note[1]}}" id="noteTitle" />
           <textarea name="" cols="30" rows="10" id="noteContent">
 {{note[2]}}</textarea
           >
-          <button onclick="editNote()">💾</button>
-          <a href="/delete/{{note[0]}}">🗑️</a>
+          <div class="buttons">
+            <button onclick="editNote({{note[0]}})">💾</button>
+            <a href="/delete/{{note[0]}}">🗑️</a>
+          </div>
         </div>
         {% endfor %}
       </div>
