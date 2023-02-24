@@ -6,13 +6,14 @@ function addNote() {
         window.location.href = `/add/${title}/${content}`;
     }
 }
-function editNote() {
-    var title = document.querySelector("#noteTitle").value;
-    var content = document.querySelector("#noteContent").target.select();
-    var noteID = document.querySelector("#noteID").innerHTML;
+function editNote(noteID) {
+    var title = document.querySelector(`[id='${noteID}']` + " #noteTitle").value;
+    var content = document.querySelector(`[id='${noteID}']` + " #noteContent").value;
+    content.replace("U+000A", "aaaaaaaaaaaaaaaaaaaaaa")
+    console.log(content)
     if (title === "" || title.replace(/\s/g, "") === "" && content === "" || content.replace(/\s/g, "") === "") {
     } else {
-        console.log(`/edit/${noteID}/${title}/${content}`)
-        window.location.href = `/edit/${noteID}/${title}/${content}`;
+        // window.location.href = `/edit/${noteID}/${title}/${content}`;
     }
+
 }
