@@ -17,25 +17,34 @@
       <div class="notes">
         {% for note in notes %}
         <div class="note" id="{{note[0]}}">
-          <input type="text" value="{{note[1]}}" id="noteTitle" />
-          <textarea name="" cols="30" rows="10" id="noteContent">
+          <input type="text" value="{{note[1]}}" id="noteTitle" required />
+          <textarea id="noteContent" class="textarea" required>
 {{note[2]}}</textarea
           >
+          <div class="dates">
+            <small>{{note[3]}}</small>
+            <small>{{note[4]}}</small>
+          </div>
           <div class="buttons">
-            <button onclick="editNote({{note[0]}})">💾</button>
+            <button onclick="editNote({{note[0]}})" class="save">💾</button>
             <a href="/delete/{{note[0]}}">🗑️</a>
           </div>
         </div>
         {% endfor %}
       </div>
       <div class="new">
-        <input type="text" name="title" id="title" placeholder="title" />
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="title"
+          required
+        />
         <textarea
-          name="content"
           id="content"
-          cols="30"
-          rows="10"
           placeholder="content"
+          class="textarea"
+          required
         ></textarea>
         <button class="addNote" onclick="addNote()">add</button>
       </div>
