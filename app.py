@@ -3,10 +3,21 @@ import secrets
 import sqlite3
 from datetime import datetime
 from flask import Flask, render_template, redirect
-
+from wtforms import validators, Form, StringField, TextAreaField
 
 app = Flask(__name__)
 app.secret_key = secrets.token_urlsafe(32)
+
+
+class noteForm(Form):
+    title = StringField(
+        "Post Title",
+        [validators.Length(min=4, max=75), validators.InputRequired()],
+    )
+    note = TextAreaField(
+        "Post Content",
+        [validators.Length(min=50)],
+    )
 
 
 def currentDate():
