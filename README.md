@@ -33,9 +33,7 @@ for run flaskNotes as a desktop app 💯
 
 ### Contributors 💕
 
-<a href="https://github.com/dogukanurker/flasknotes/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=dogukanurker/flasknotes" />
-</a>
+<a href="https://github.com/dogukanurker"><img src="https://avatars.githubusercontent.com/u/62756402" title="ngryman" width="80" height="80"></a>
 
 ### Support 💰
 
